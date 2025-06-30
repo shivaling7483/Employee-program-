@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Employee List</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input { margin: 5px; }
+    button { margin: 5px; }
+    ul { list-style: none; padding: 0; }
+    li { background: #f0f0f0; margin: 5px 0; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Employee Program</h2>
+  <input type="text" id="empName" placeholder="Employee Name">
+  <button onclick="addEmployee()">Add</button>
+  <ul id="empList"></ul>
+
+  <script>
+    function addEmployee() {
+      let name = document.getElementById('empName').value.trim();
+      if(name) {
+        let li = document.createElement('li');
+        li.textContent = name;
+        document.getElementById('empList').appendChild(li);
+        document.getElementById('empName').value = '';
+      } else {
+        alert('Please enter a name.');
+      }
+    }
+  </script>
+</body>
+</html>
